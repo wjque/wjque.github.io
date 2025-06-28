@@ -12,7 +12,7 @@ site_theme               : "default"
 title                    : "Wenjun Que / Junior in THU"
 title_separator          : "-"
 name                     : &name "Wenjun Que"
-description              : &description "A junior student in Tsinghua University, majoring in Automation. This is my personal website, where I share my academic journey, projects, and thoughts."
+description              : &description "A junior student in Tsinghua University, majoring in Automation. "
 url                      : https://wjque.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io" or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "wjque/wjque.github.io"
@@ -25,7 +25,7 @@ author:
   avatar           : "profile.png"
   name             : "Wenjun Que"
   pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
+  bio              : "A junior student in Tsinghua University, majoring in Automation."
   location         : "Beijing, China"
   employer         : "Tsinghua University"
   uri              : # URL
@@ -46,7 +46,7 @@ author:
   bitbucket        : # Username - Update with your username on the site
   codepen          : # Username
   dribbble         : # Username
-  github           : "wjque"
+  github           : "https://github.com/wjque"
   kaggle           : # Username  
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 
@@ -75,7 +75,6 @@ author:
   xing             : # Username
   youtube          : # Username
   zhihu            : # Username
-  wechat           : 阙文俊
 
 # Publication Category - The following the list of publication categories and their headings
 publication_category:
