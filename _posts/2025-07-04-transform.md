@@ -1,7 +1,7 @@
 ---
 title: 'Transform'
-date: 2025-06-29
-permalink: /notes/2025/06/transform/
+date: 2025-07-04
+permalink: /notes/2025/07/transform/
 category: 'notes'
 ---
 
