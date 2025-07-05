@@ -11,10 +11,14 @@ category: 'notes'
 
 而三维世界中的 `model` 常用一定数量的三角形表示，并且三角形的边通常使用顶点之间的连接关系来表示，因此我们通常处理的都是三维世界中的顶点集，故顶点的变换法则显得尤为重要，下面先介绍二维世界的变换法则，由此推及到三维的情形
 
-2D Transfroms
-======
+# 2D Transfroms
 
 ## Scale (缩放)
+
+对二维图像进行缩放操作，等价于对面内的每一个顶点 $$(x, y)^T$$ 进行相同的比例变换，假设横向缩放 $$s_x$$ 倍，纵向缩放 $$s_y$$ 倍，那么缩放矩阵可以表示为： $$S_{x,y} = \begin{pmatrix}
+{s_x} & 0 \\
+0 & {s_y}
+\end{pmatrix}$$
 
 ## Reflection (反射)
 
@@ -24,5 +28,4 @@ category: 'notes'
 
 ## Translation (平移)
 
-3D Transforms
-======
+# 3D Transforms
