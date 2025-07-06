@@ -1,6 +1,6 @@
 ---
 title: 'Rasterization'
-date: 2025-07-06
+date: 2025-07-07
 permalink: /notes/2025/07/rasterization/
 category: 'notes'
 ---

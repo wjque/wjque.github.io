@@ -158,4 +158,96 @@ sin \theta & cos \theta & 0 \\
 0 & 0 & 1 \\
 \end{pmatrix}$$
 
+### Composeing Transform (组合变换)
+
+将上述变换进行组合可以得到一系列更加复杂的变换，例如 $$A_n \cdot A_{n-1} \cdot A_{n-2}\ ...\ A_1$$，但是需要注意的是，先作用的变换位于乘积的右侧，这是因为矩阵作用在点或者向量上是以**左乘**的形式作用的。
+
+### Decomposing Complex Transform (分解复杂变换)
+
+以绕某个顶点旋转为例，具体方法如下：
+
+1. 将所围绕的顶点平移至原点（假设平移量是c）：$$T(c)$$
+2. 使用旋转矩阵：$$R(\alpha)$$
+3. 平移回原坐标：$$T(-c)$$
+
+可以得到绕自身某个顶点旋转 $$\alpha$$ 角的矩阵 $$M=T(-c) \cdot R(\alpha) \cdot T(c)$$
+
 ## 3D Transforms
+
+### 三维情形下的齐次坐标
+
+$$3D\ Point:\ (x,y,z,1)^T \quad 3D\ Vector:\ (x,y,z,0)^T$$
+
+同理有 $$(x, y, z, w)^T,\ w \not= 0$$ 表示 $$(\frac{x}{w},\frac{y}{w},\frac{z}{w},1)$$
+
+仿射变换矩阵的齐次坐标表示：
+
+$$\begin{pmatrix}
+x' \\
+y' \\
+z' \\
+1 \\
+\end{pmatrix} = \begin{pmatrix}
+a & b & c & t_x \\
+d & e & f & t_y \\
+g & h & i & t_z \\
+0 & 0 & 0 & 1 \\
+\end{pmatrix}\cdot \begin{pmatrix}
+x \\
+y \\
+z \\
+1 \\
+\end{pmatrix}$$
+
+### 三维情形下的坐标变换
+
+完全类似二维的情形：
+
+缩放矩阵： $$\begin{pmatrix}
+s_x & 0 & 0 & 0 \\
+0 & s_y & 0 & 0 \\
+0 & 0 & s_z & 0 \\
+0 & 0 & 0 & 1 \\
+\end{pmatrix}$$
+
+平移矩阵： $$\begin{pmatrix}
+1 & 0 & 0 & t_x \\
+0 & 1 & 0 & t_y \\
+0 & 0 & 1 & t_z \\
+0 & 0 & 0 & 1 \\
+\end{pmatrix}$$
+
+对于旋转矩阵，我们常用关于坐标轴的旋转，在右手坐标系中绕x轴逆时针（沿着x轴负方向看去）旋转 $$\alpha$$：$$R_x(\alpha) = \begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 & cos \alpha & -sin \alpha & 0 \\
+0 & sin \alpha & cos \alpha & 0 \\
+0 & 0 & 0 & 1 \\
+\end{pmatrix}$$
+
+绕z轴逆时针（沿着z轴负方向看去）旋转 $$\alpha$$：$$R_z(\alpha) = \begin{pmatrix}
+cos \alpha & -sin \alpha & 0 & 0 \\
+sin \alpha & cos \alpha & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 \\
+\end{pmatrix}$$
+
+绕y轴逆时针（沿着y轴负方向看去）旋转 $$\alpha$$：$$R_y(\alpha) = \begin{pmatrix}
+cos \alpha & 0 & sin \alpha & 0 \\
+0 & 1 & 0 & 0 \\
+-sin \alpha & 0 & cos \alpha & 0 \\
+0 & 0 & 0 & 1 \\
+\end{pmatrix}$$，对应的线性变换与绕x轴和绕z轴的有一点区别
+
+绕任意轴旋转的复杂旋转：
+
+$$R_{xyz}(\alpha, \beta, \gamma)=R_x(\alpha) \cdot R_y(\beta) \cdot R_z(\gamma)$$
+
+其中 $$(\alpha, \beta, \gamma)$$ 称为 Eurel 角，可以表示任意的旋转过程
+
+绕任意轴旋转指定角度的旋转矩阵（**Rodrigue's Rotation Formula**）：
+
+$$R(\vec{n}, \alpha) = cos \alpha I_3 + (1-cos\alpha) \vec{n} \cdot \vec{n}^T + sin \alpha \begin{pmatrix}
+0 & -n_z & n_y \\
+n_z & 0 & -n_x \\
+-n_y & n_x & 0 \\
+\end{pmatrix}$$
