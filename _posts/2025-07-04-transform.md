@@ -113,4 +113,38 @@ y/w \\
 1
 \end{pmatrix}$$，所以 point + point 表示的实际上是二者的中点 
 
+可表示为以下形式的变换统称为**仿射变换（Affine Transform）**： $$\begin{pmatrix}
+x' \\
+y' \\
+\end{pmatrix}=\begin{pmatrix}
+a & b \\
+c & d \\
+\end{pmatrix}\ \begin{pmatrix}
+x \\
+y \\
+\end{pmatrix} + \begin{pmatrix}
+t_x \\
+t_y \\
+\end{pmatrix}$$
+
+仿射变换的共同点是**最后一行都为(0, 0 , 1)**，需要注意的是未来将要经常使用的投影变换（Project Transform）不属于仿射变换
+
+缩放变换矩阵的齐次坐标表示： $$S_{x,y}=\begin{pmatrix}
+s_x & 0 & 0 \\
+0 & s_y & 0 \\
+0 & 0 & 1 \\
+\end{pmatrix}$$
+
+旋转变换矩阵的齐次坐标表示： $$R_{\theta}=\begin{pmatrix}
+cos \theta & -sin \theta & 0 \\
+sin \theta & cos \theta & 0 \\
+0 & 0 & 1 \\
+\end{pmatrix}$$
+
+平移变换矩阵的齐次坐标表示： $$S_{x,y}=\begin{pmatrix}
+1 & 0 & t_x \\
+0 & 1 & t_y \\
+0 & 0 & 1 \\
+\end{pmatrix}$$
+
 ## 3D Transforms
