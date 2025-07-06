@@ -7,12 +7,12 @@
 # server process.
 
 # Basic Site Settings
-locale                   : "en-US"
+locale                   : "zh-CN"
 site_theme               : "default"
-title                    : "Wenjun Que / Junior in THU"
+title                    : "Wenjun Que / Undergraduate in THU"
 title_separator          : "-"
 name                     : &name "Wenjun Que"
-description              : &description "A junior student in Tsinghua University, majoring in Automation. "
+description              : &description "A Undergraduate student in Tsinghua University, majoring in Automation. "
 url                      : https://wjque.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io" or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "wjque/wjque.github.io"
@@ -24,8 +24,8 @@ author:
   # Biographic information
   avatar           : "profile.png"
   name             : "Wenjun Que"
-  pronouns         : # example: "she/her"  
-  bio              : "A junior student in Tsinghua University, majoring in Automation."
+  pronouns         : "he"
+  bio              : "A Undergraduate student in Tsinghua University, majoring in Automation."
   location         : "Beijing, China"
   employer         : "Tsinghua University"
   uri              : # URL
@@ -90,7 +90,7 @@ teaser                   :  # filename of teaser fallback teaser image placed in
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
 future                   : true
-read_more                : "disabled" # if enabled, adds "Read more" links to excerpts
+read_more                : "enabled" # if enabled, adds "Read more" links to excerpts
 talkmap_link             : false      #change to true to add link to talkmap on talks page
 comments:
   provider               : # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
@@ -197,7 +197,7 @@ markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 markdown: kramdown
 highlighter: rouge
 lsi: false
-excerpt_separator: "\n\n"
+excerpt_separator: "<!--more-->"
 incremental: false
 
 
