@@ -20,7 +20,7 @@ category: 'notes'
 0 & {s_y}
 \end{pmatrix}$$
 
-![Scale](./pictures/Scale.png "Scale")
+![Scale](../images/Scale.png)
 
 ### Reflection (反射)
 
