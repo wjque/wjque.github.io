@@ -5,11 +5,11 @@ permalink: /notes/2025/07/transform/
 category: 'notes'
 ---
 
-三维世界中的物体称为 `Model`，我们所制作的 animation 其实就是 `Model` 的 scaling 
+三维世界中的物体称为 Model，我们所制作的 animation 其实就是 Model 的 scaling 
 
 <!--more-->
 
-区别于计算机视觉由 2D 信息复原 3D 信息的任务，计算机图形学关心的是如何将 3D 的 `model` 呈现在屏幕 `screen` 上。
+区别于计算机视觉由 2D 信息复原 3D 信息的任务，计算机图形学关心的是如何将 3D 的模型 `model` 呈现在 2D 的屏幕 `screen` 上。
 
 而三维世界中的 `model` 常用一定数量的三角形表示，并且三角形的边通常使用顶点之间的连接关系来表示，因此我们通常处理的都是三维世界中的顶点集，故顶点的变换法则显得尤为重要，下面先介绍二维世界的变换法则，由此推及到三维的情形。
 
@@ -251,3 +251,5 @@ $$R(\vec{n}, \alpha) = cos \alpha I_3 + (1-cos\alpha) \vec{n} \cdot \vec{n}^T + 
 n_z & 0 & -n_x \\
 -n_y & n_x & 0 \\
 \end{pmatrix}$$
+
+但是如今**四元数**的使用也非常广泛，原因在于使用四元数可以很方便地进行旋转矩阵的插值
