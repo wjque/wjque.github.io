@@ -17,6 +17,64 @@ function escapeHtml(text) {
         .replaceAll("'", '&#39;');
 }
 
+function extractDisplayMathBlocks(markdown) {
+    const lines = markdown.split('\n');
+    const mathBlocks = [];
+    const output = [];
+    let inMathBlock = false;
+    let currentBlock = [];
+
+    for (const line of lines) {
+        if (line.trim() === '$$') {
+            if (inMathBlock) {
+                const token = `@@DISPLAY_MATH_${mathBlocks.length}@@`;
+                mathBlocks.push(currentBlock.join('\n').trim());
+                output.push(token);
+                currentBlock = [];
+                inMathBlock = false;
+            } else {
+                inMathBlock = true;
+            }
+            continue;
+        }
+
+        if (inMathBlock) {
+            currentBlock.push(line);
+        } else {
+            output.push(line);
+        }
+    }
+
+    if (inMathBlock) {
+        output.push('$$');
+        output.push(...currentBlock);
+    }
+
+    return {
+        markdown: output.join('\n'),
+        mathBlocks
+    };
+}
+
+function renderDisplayMathBlocks(html, mathBlocks) {
+    return mathBlocks.reduce((result, expression, index) => {
+        const token = `@@DISPLAY_MATH_${index}@@`;
+
+        if (!window.katex) {
+            return result.replace(`<p>${token}</p>`, `<pre>${escapeHtml(expression)}</pre>`)
+                .replace(token, escapeHtml(expression));
+        }
+
+        const rendered = window.katex.renderToString(expression, {
+            displayMode: true,
+            throwOnError: false,
+            strict: 'ignore'
+        });
+
+        return result.replace(`<p>${token}</p>`, rendered).replace(token, rendered);
+    }, html);
+}
+
 function renderTags(tags) {
     return tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join('');
 }
@@ -171,18 +229,23 @@ async function setupPostPage(posts) {
     }
 
     const markdown = await markdownResponse.text();
-    contentEl.innerHTML = window.marked.parse(markdown, {
+    const { markdown: markdownWithoutDisplayMath, mathBlocks } = extractDisplayMathBlocks(markdown);
+    const parsedHtml = window.marked.parse(markdownWithoutDisplayMath, {
         breaks: false,
         gfm: true
     });
+    contentEl.innerHTML = renderDisplayMathBlocks(parsedHtml, mathBlocks);
 
     if (window.renderMathInElement) {
         window.renderMathInElement(contentEl, {
             delimiters: [
                 { left: '$$', right: '$$', display: true },
-                { left: '$', right: '$', display: false }
+                { left: '\\[', right: '\\]', display: true },
+                { left: '$', right: '$', display: false },
+                { left: '\\(', right: '\\)', display: false }
             ],
-            throwOnError: false
+            throwOnError: false,
+            strict: 'ignore'
         });
     }
 
