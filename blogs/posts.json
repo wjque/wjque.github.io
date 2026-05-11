@@ -1,0 +1,79 @@
+[
+  {
+    "id": "idea-2025-04-29-action-space",
+    "section": "ideas",
+    "sectionTitle": "Ideas",
+    "title": "Action Spaces and Self-Forcing",
+    "summary": "Thoughts on Self-Forcing, explicit action spaces, and latent action spaces.",
+    "date": "2025-04-29",
+    "lang": "zh-CN / en",
+    "tags": ["World Model", "Action Space", "Self-Forcing"],
+    "file": "posts/ideas/2025-04-29-action-space.md"
+  },
+  {
+    "id": "idea-2025-04-23-video-understanding",
+    "section": "ideas",
+    "sectionTitle": "Ideas",
+    "title": "From Similarity to Event Understanding",
+    "summary": "On moving from similarity matching to event-level video understanding.",
+    "date": "2025-04-23",
+    "lang": "zh-CN / en",
+    "tags": ["Video Understanding", "Representation Learning", "World Model"],
+    "file": "posts/ideas/2025-04-23-video-understanding.md"
+  },
+  {
+    "id": "idea-2025-04-16-test-time-training",
+    "section": "ideas",
+    "sectionTitle": "Ideas",
+    "title": "Test-Time Training for World Models",
+    "summary": "A proposal for improving world model generalization in OOD settings.",
+    "date": "2025-04-16",
+    "lang": "zh-CN / en",
+    "tags": ["Test-Time Training", "OOD", "World Model"],
+    "file": "posts/ideas/2025-04-16-test-time-training.md"
+  },
+  {
+    "id": "algorithm-diffusion-sde",
+    "section": "generative-models",
+    "sectionTitle": "Generative Models",
+    "title": "Diffusion Models from the SDE View",
+    "summary": "Forward and reverse diffusion processes through SDEs and the Fokker-Planck equation.",
+    "date": "2025-04-18",
+    "lang": "zh-CN / en",
+    "tags": ["Diffusion", "SDE", "Score Matching"],
+    "file": "posts/generative-models/diffusion-sde.md"
+  },
+  {
+    "id": "algorithm-diffusion-ode",
+    "section": "generative-models",
+    "sectionTitle": "Generative Models",
+    "title": "Diffusion Models from the ODE View",
+    "summary": "Diffusion models through ODEs and flow matching.",
+    "date": "2025-04-18",
+    "lang": "zh-CN / en",
+    "tags": ["Diffusion", "ODE", "Flow Matching"],
+    "file": "posts/generative-models/diffusion-ode.md"
+  },
+  {
+    "id": "algorithm-dino-representation",
+    "section": "representation-learning",
+    "sectionTitle": "Representation Learning",
+    "title": "DINO Representations and Applications",
+    "summary": "DINO, DINOv2, and DINOv3 representations and their downstream uses.",
+    "date": "2025-04-18",
+    "lang": "zh-CN / en",
+    "tags": ["DINO", "Representation Learning", "ViT"],
+    "file": "posts/representation-learning/dino-representation.md"
+  },
+  {
+    "id": "algorithm-data-parallel",
+    "section": "training-systems",
+    "sectionTitle": "Training Systems",
+    "title": "Data Parallel (DP)",
+    "summary": "The basic idea and historical context of Data Parallel.",
+    "date": "2025-04-18",
+    "lang": "zh-CN / en",
+    "tags": ["Distributed Training", "Data Parallel", "PyTorch"],
+    "file": "posts/training-systems/distributed-data-parallel.md"
+  }
+]
