@@ -13,7 +13,10 @@ Personal website.
 - `blogs/blog.js`: blog rendering logic
 - `blogs/blog.css`: blog styles
 - `blogs/posts.json`: blog index data
-- `blogs/posts/`: markdown source files
+- `publications/index.html`: full publication list
+- `publications/pubs.json`: central publication data (single source of truth)
+- `publications/pubs.js`: publication renderer (consumed by both homepage and full page)
+- `images/publications/`: paper thumbnails
 
 ## News
 
@@ -28,14 +31,40 @@ Rules:
 
 ## Publications
 
-The `Publications` section is maintained directly in `index.html` under `#publications`.
+Publications are driven by a single JSON file: **`publications/pubs.json`**. Both the homepage card and the full publication page read from it — there is only one place to edit.
 
-Rules:
+### pubs.json format
 
-1. Duplicate or edit one `.publication-item` block.
-2. Fill in title, authors, venue, and links.
-3. Uncomment blocks if needed.
-4. Keep the newest or most important items near the top.
+```json
+{
+    "title": "Paper Title",
+    "authors": [
+        { "name": "Wenjun Que", "highlight": true },
+        { "name": "Other Author", "sup": "‡" },
+        { "name": "Third Author", "sup": "†", "supClass": "project-leader" }
+    ],
+    "footnote": "‡ Corresponding author",
+    "venue": "CVPR, 2024",
+    "year": 2024,
+    "image": "paper-title.png",
+    "links": { "pdf": "https://...", "code": "https://...", "cite": "https://..." }
+}
+```
+
+Field notes:
+- `highlight: true` wraps the author name in `.author-highlight`.
+- `sup` adds a superscript marker (e.g. `‡`, `*`, `†`); use `supClass` for special styling (e.g. `"project-leader"`).
+- `footnote` is optional — omit or use `""` when not needed.
+- `venue` should be a concise abbreviation (e.g. `CVPR, 2024`).
+- `year` controls sort order (newest first). On the homepage, only the 3 most recent entries are shown.
+- `image` points to a file under `images/publications/` — shown on both the homepage and the full page.
+- `links` — omit any key to hide the corresponding button.
+
+### Adding a publication
+
+1. Append a new entry to the array in `publications/pubs.json`.
+2. Place the thumbnail image in `images/publications/`.
+3. Done — both the homepage and `/publications/` update automatically.
 
 ## Blogs
 

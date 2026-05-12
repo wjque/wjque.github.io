@@ -17,7 +17,7 @@
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="publications/">Publications</a></li>
                     <li><a href="blogs/">Blogs</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -113,95 +113,18 @@
 
     <section id="publications" class="publications">
         <div class="container">
-            <h2>Publications</h2>
-            <div class="publications-list">
-                <!-- Publication 1 -->
-                <!-- <div class="publication-item">
-                    <div class="publication-content">
-                        <h3>A Novel Approach to Deep Learning</h3>
-                        <p class="authors">
-                            <span class="author-highlight">
-                                Wenjun Que
-                            </span>,
-                            John Smith,
-                            Jane Doe<sup>‡</sup>
-                        </p>
-                        <p class="footnote">‡ Corresponding author</p>
-                        <p class="venue">IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2024</p>
-                        <div class="publication-links">
-                            <a href="#" class="btn">PDF</a>
-                            <a href="#" class="btn">Code</a>
-                            <a href="#" class="btn">Cite</a>
-                        </div>
-                    </div>
-                </div> -->
-
-                <!-- Publication 2 -->
-                <!-- <div class="publication-item">
-                    <div class="publication-content">
-                        <h3>Advanced Methods in Image Processing</h3>
-                        <p class="authors">
-                            <span class="author-highlight">
-                                Wenjun Que<sup>*</sup>
-                            </span>,
-                            <span class="author-highlight">
-                                Alice Johnson<sup>*</sup>
-                            </span>,
-                            Bob Wilson
-                        </p>
-                        <p class="footnote">* Equal contribution</p>
-                        <p class="venue">Neural Information Processing Systems (NeurIPS), 2024</p>
-                        <div class="publication-links">
-                            <a href="#" class="btn">PDF</a>
-                            <a href="#" class="btn">Code</a>
-                            <a href="#" class="btn">Cite</a>
-                        </div>
-                    </div>
-                </div> -->
-
-                <!-- Publication 3 -->
-                <!-- <div class="publication-item">
-                    <div class="publication-content">
-                        <h3>Machine Learning Applications in Healthcare</h3>
-                        <p class="authors">
-                            <span class="author-highlight">
-                                Wenjun Que
-                            </span>,
-                            John Smith,
-                            Jane Doe<sup class="project-leader">†</sup>
-                        </p>
-                        <p class="footnote">† Project leader</p>
-                        <p class="venue">International Conference on Machine Learning (ICML), 2023</p>
-                        <div class="publication-links">
-                            <a href="#" class="btn">PDF</a>
-                            <a href="#" class="btn">Code</a>
-                            <a href="#" class="btn">Cite</a>
-                        </div>
-                    </div>
-                </div> -->
-
-                <!-- Publication 4 -->
-                <!-- <div class="publication-item">
-                    <div class="publication-content">
-                        <h3>Efficient Algorithms for Large-Scale Data</h3>
-                        <p class="authors">
-                            Alice Johnson,
-                            Bob Smith,
-                            <span class="author-highlight">
-                                Wenjun Que
-                            </span>
-                        </p>
-                        <p class="venue">ACM Conference on Special Interest Group on Data Communication (SIGCOMM), 2023
-                        </p>
-                        <div class="publication-links">
-                            <a href="#" class="btn">PDF</a>
-                            <a href="#" class="btn">Code</a>
-                            <a href="#" class="btn">Cite</a>
-                        </div>
-                    </div>
-                </div> -->
-
+            <div class="section-heading">
+                <div>
+                    <h2>Publications</h2>
+                </div>
             </div>
+            <div class="publications-card">
+                <div id="home-pubs" class="publications-list"></div>
+                <div class="publications-card-footer">
+                    <a href="publications/" class="view-all">View all works →</a>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section id="contact" class="contact">
@@ -232,6 +155,8 @@
             <p>Built with HTML & CSS</p>
         </div>
     </footer>
+
+    <script src="publications/pubs.js"></script>
 </body>
 
 </html>

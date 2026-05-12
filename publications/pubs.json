@@ -1,0 +1,15 @@
+[
+    {
+        "title": "A Novel Approach to Deep Learning",
+        "authors": [
+            { "name": "Wenjun Que", "highlight": true },
+            { "name": "John Smith" },
+            { "name": "Jane Doe", "sup": "‡" }
+        ],
+        "footnote": "‡ Corresponding author",
+        "venue": "CVPR, 2024",
+        "year": 2024,
+        "image": "paper1.png",
+        "links": { "pdf": "#", "code": "#", "cite": "#" }
+    }
+]
