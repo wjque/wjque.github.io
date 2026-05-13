@@ -56,6 +56,16 @@ function extractDisplayMathBlocks(markdown) {
     };
 }
 
+function extractInlineMathBlocks(markdown) {
+    const inlineMathBlocks = [];
+    const result = markdown.replace(/\$([^$\n]+?)\$/g, (_match, expression) => {
+        const token = `@@INLINE_MATH_${inlineMathBlocks.length}@@`;
+        inlineMathBlocks.push(expression);
+        return token;
+    });
+    return { markdown: result, inlineMathBlocks };
+}
+
 function renderDisplayMathBlocks(html, mathBlocks) {
     return mathBlocks.reduce((result, expression, index) => {
         const token = `@@DISPLAY_MATH_${index}@@`;
@@ -67,6 +77,24 @@ function renderDisplayMathBlocks(html, mathBlocks) {
 
         const rendered = window.katex.renderToString(expression, {
             displayMode: true,
+            throwOnError: false,
+            strict: 'ignore'
+        });
+
+        return result.replace(`<p>${token}</p>`, rendered).replace(token, rendered);
+    }, html);
+}
+
+function renderInlineMathBlocks(html, inlineMathBlocks) {
+    return inlineMathBlocks.reduce((result, expression, index) => {
+        const token = `@@INLINE_MATH_${index}@@`;
+
+        if (!window.katex) {
+            return result.replace(token, `$${escapeHtml(expression)}$`);
+        }
+
+        const rendered = window.katex.renderToString(expression, {
+            displayMode: false,
             throwOnError: false,
             strict: 'ignore'
         });
@@ -230,11 +258,14 @@ async function setupPostPage(posts) {
 
     const markdown = await markdownResponse.text();
     const { markdown: markdownWithoutDisplayMath, mathBlocks } = extractDisplayMathBlocks(markdown);
-    const parsedHtml = window.marked.parse(markdownWithoutDisplayMath, {
+    const { markdown: cleanMarkdown, inlineMathBlocks } = extractInlineMathBlocks(markdownWithoutDisplayMath);
+    const parsedHtml = window.marked.parse(cleanMarkdown, {
         breaks: false,
         gfm: true
     });
-    contentEl.innerHTML = renderDisplayMathBlocks(parsedHtml, mathBlocks);
+    let html = renderDisplayMathBlocks(parsedHtml, mathBlocks);
+    html = renderInlineMathBlocks(html, inlineMathBlocks);
+    contentEl.innerHTML = html;
 
     if (window.renderMathInElement) {
         window.renderMathInElement(contentEl, {

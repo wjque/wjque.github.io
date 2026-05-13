@@ -69,30 +69,44 @@
 .post-toc,
 .post-toc-list {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-}
-
-.post-toc,
-.post-toc-list {
     flex-direction: column;
+    gap: 0.15rem;
 }
 
 .post-toc a {
-    border: 1px solid rgba(118, 75, 162, 0.18);
-    background: #fff;
-    border-radius: 999px;
+    display: block;
+    padding: 0.35rem 0;
     color: var(--text-color);
     text-decoration: none;
-    padding: 0.45rem 0.85rem;
-    font-size: 0.92rem;
-    transition: all 0.2s ease;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    transition: color 0.2s ease;
 }
 
 .post-toc a:hover {
-    color: white;
-    background: var(--primary-color);
-    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.post-toc a[data-level="2"] {
+    font-weight: 700;
+    font-size: 0.92rem;
+    padding-top: 0.5rem;
+}
+
+.post-toc a[data-level="2"]:first-child {
+    padding-top: 0;
+}
+
+.post-toc a[data-level="3"] {
+    margin-left: 1rem;
+    padding-left: 0.6rem;
+    border-left: 2px solid var(--border-color);
+    color: var(--text-light);
+    font-size: 0.85rem;
+}
+
+.post-toc a[data-level="3"]:hover {
+    border-left-color: var(--primary-color);
 }
 
 .blog-post-list {
@@ -286,15 +300,6 @@
 
 .post-content .katex-display > .katex {
     white-space: nowrap;
-}
-
-.post-toc a {
-    border-radius: 12px;
-    padding: 0.5rem 0.75rem;
-}
-
-.post-toc a[data-level="3"] {
-    margin-left: 0.75rem;
 }
 
 @media (max-width: 1024px) {

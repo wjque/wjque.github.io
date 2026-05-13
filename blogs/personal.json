@@ -1,0 +1,35 @@
+[
+  {
+    "id": "idea-2025-04-29-action-space",
+    "section": "ideas",
+    "sectionTitle": "Ideas",
+    "title": "Action Spaces and Self-Forcing",
+    "summary": "Thoughts on Self-Forcing, explicit action spaces, and latent action spaces.",
+    "date": "2025-04-29",
+    "lang": "zh-CN",
+    "tags": ["World Model", "Action Space", "Self-Forcing"],
+    "file": "posts/ideas/2025-04-29-action-space.md"
+  },
+  {
+    "id": "idea-2025-04-23-video-understanding",
+    "section": "ideas",
+    "sectionTitle": "Ideas",
+    "title": "From Similarity to Event Understanding",
+    "summary": "On moving from similarity matching to event-level video understanding.",
+    "date": "2025-04-23",
+    "lang": "zh-CN",
+    "tags": ["Video Understanding", "Representation Learning", "World Model"],
+    "file": "posts/ideas/2025-04-23-video-understanding.md"
+  },
+  {
+    "id": "idea-2025-04-16-test-time-training",
+    "section": "ideas",
+    "sectionTitle": "Ideas",
+    "title": "Test-Time Training for World Models",
+    "summary": "A proposal for improving world model generalization in OOD settings.",
+    "date": "2025-04-16",
+    "lang": "zh-CN",
+    "tags": ["Test-Time Training", "OOD", "World Model"],
+    "file": "posts/ideas/2025-04-16-test-time-training.md"
+  }
+]

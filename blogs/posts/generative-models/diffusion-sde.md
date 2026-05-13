@@ -1,4 +1,4 @@
-# Diffusion Model 的 SDE 表示
+# Diffusion Model 的 SDE 建模
 
 我们已经习惯了用**隐空间概率分布**的方式理解扩散模型的原理：
 
